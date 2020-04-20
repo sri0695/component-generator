@@ -4,28 +4,50 @@ import ComponentGenerator from './components/ComponentGenerator/ComponentGenerat
 
 function App() {
   return (
-    
+
     <div className="App">
       {/* <JSONparserComponent/> */}
       <ComponentGenerator
         title='Input'
         model={[
-          { key: 'Project', label: 'Project Name', type: 'text', props: { required: true } },
-          { key: 'DeliveryDate', label: 'Delivery Date', type: 'date', props: { required: true } },
-          { key: 'ItemName', label: 'Item Name', type: 'text', props: { required: true } },
-          { key: 'ItemNumber', label: 'Item Number', type: 'number', props: { required: true } },
-          { key: 'ItemDiv', label: 'Item Division', type: 'text', props: { required: true } },
+          { id: 'project-id', label: 'Project Id', isRequired: true, type: 'text', helperText: 'Enter Project Id', defaultValue: '' },
+          { id: 'project-name', label: 'Project Name', isRequired: true, type: 'text', helperText: 'Enter Project Name', defaultValue: '' },
+          { id: 'project-no', label: 'Project Number', isRequired: false, type: 'number', helperText: '', defaultValue: '' },
+          { id: 'project-date', label: 'Project Date', isRequired: false, type: 'date', helperText: '', defaultValue: '' },
           {
-            key: 'Gender', label: 'Gender', type: 'radio',
-            options: [{ key: 'Male', label: 'Male', name: 'Gender', value: 'male' },
-            { key: 'Female', label: 'Female', name: 'Gender', value: 'female' }]
+            id: 'project-radio', label: 'Target Achieved', type: 'radio', name: 'targetAchieved', defaultValue: 'above',
+            options: [
+              { value: 'above', label: 'Above', disabled: false },
+              { value: 'inRange', label: 'In Range', disabled: false },
+              { value: 'below', label: 'Below', disabled: false }
+            ]
           },
           {
-            key: 'Warehouse', label: 'Warehouse', type: 'select', value: 'tubet',
-            options: [{ key: 'Osaka', label: 'Osaka', name: 'Warehouse', value: 'osaka' },
-            { key: 'Tubet', label: 'Tubet', name: 'Warehouse', value: 'tubet' }]
+            id: 'project-select', label: 'Project Types', type: 'select', defaultValue: '001',
+            options: [
+              { value: '001', label: 'Project1' },
+              { value: '002', label: 'Project2' },
+              { value: '003', label: 'project3' }
+            ]
+          },
+          {
+            id:'project-table',label:'Project Table',type: 'table',
+            headers:[
+              {label: 'Header1',align : 'left'},
+              {label: 'Header2',align : 'left'},
+              {label: 'Header3',align : 'right'},
+              {label: 'Header4',align : 'left'},
+              {label: 'Header5',align : 'right'}
+            ]
+          },
+          {
+            id:'project-button',label: 'ButtonLabel',type:'button', color:'primary',disabled:false
           }
-        ]} />
+
+
+
+        ]}
+      />
 
     </div>
   );
