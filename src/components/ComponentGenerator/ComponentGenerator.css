@@ -1,3 +1,67 @@
 .text-input .MuiInputBase-input{
     width:250px;
 }
+
+/* .container-class{
+  
+} */
+
+.input-items .input-class{
+    /* background-color: blue; */
+    display: flex;
+    padding-left: 10rem;
+}
+
+.input-items .date-class{
+    /* background-color: chartreuse; */
+    display: flex;
+    padding-left: 10rem;
+}
+
+.input-items .button-class{
+    /* background-color: darkcyan; */
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.input-items .radio-class{
+    /* background-color: orchid; */
+    display: flex;
+    padding-left: 10rem;
+    padding-top: 1rem;
+}
+
+.input-items .checkbox-class{
+    display: flex;
+    padding-left: 10rem;
+    padding-top: 0.5rem;
+}
+
+.input-items .switch-class{
+    display: flex;
+    padding-left: 10rem;
+    padding-top: 1rem;
+}
+
+.input-items .select-class{
+    /* background-color:pink; */
+    display: table;
+    padding-left: 10rem;
+    padding-top: 1rem;
+}
+
+.input-items .table-class{
+    padding-top: 1rem;
+    padding-inline-end: 1rem;
+    padding-inline-start: 1rem;
+}
+
+.input-items .subhead-class .MuiFormLabel-root{
+    display: flex;
+    padding-inline-start: 1rem;
+    color: black;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+}
+

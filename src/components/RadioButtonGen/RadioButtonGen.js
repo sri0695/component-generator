@@ -1,35 +1,29 @@
 import React from 'react'
-import { RadioGroup, FormControlLabel, Radio, FormLabel, FormControl, Grid } from '@material-ui/core'
+import { RadioGroup, FormControlLabel, Radio, FormLabel, FormControl } from '@material-ui/core'
 
 
 const RadioButtonGen = ({ properties }) => {
-
-    let radioInput = properties.map((inputItem) => {
-        let input;
-        if (inputItem.type === 'radio') {
-            input = inputItem.options.map(option => {
-                return (
-                    <FormControlLabel
-                        value={option.value}
-                        control={<Radio color="primary" />}
-                        label={option.label}
-                        disabled={option.disabled}
-                        labelPlacement="end" />
-                )
-            });
-            return (
-                <Grid item xs ={6}>
-                <FormControl component="fieldset">
-                    <FormLabel component="legend">{inputItem.label}</FormLabel>
-                    <RadioGroup aria-label={inputItem.label} name={inputItem.name} defaultValue={inputItem.defaultValue}>
-                        {input}
-                    </RadioGroup>
-                </FormControl>
-            </Grid>
-            )
-        }
-    })
-    return radioInput;
+    console.log(properties)
+    let input = properties.options.map(option => {
+        return (
+            <FormControlLabel
+                value={option.value}
+                control={<Radio color="primary" />}
+                label={option.label}
+                disabled={option.disabled}
+                labelPlacement="end" />
+        )
+    });
+    return (
+        <div className='radio-class'>
+            <FormControl component="fieldset">
+                <FormLabel component="legend">{properties.label}</FormLabel>
+                <RadioGroup aria-label={properties.label} name={properties.name} defaultValue={properties.defaultValue}>
+                    {input}
+                </RadioGroup>
+            </FormControl>
+        </div>
+    )
 }
 
 export default RadioButtonGen
